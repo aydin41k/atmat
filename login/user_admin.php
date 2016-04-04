@@ -1,5 +1,7 @@
 <?php
-
+  $rankRequired = 1;
+  $userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+  Session::checkPoint($rankRequired,$userRank);
   $dieMessage = '<a href="'.$_SERVER['PHP_SELF'].'">Click to go back to user registration page</a><br />';
 
   if( !isset($_GET['edit']) && !isset($_GET['delete']) ) {

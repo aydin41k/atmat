@@ -1,3 +1,7 @@
+$rankRequired = 5;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+
 <div class="container-fluid">
 <div class="jumbobox text-center">
 <?php

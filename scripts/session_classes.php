@@ -16,5 +16,12 @@ class Session {
   public static function reload() {
     echo '<script language="javascript">location.reload();</script>';
   }
+  public static function checkPoint($rankRequired,$userRank) {
+   if( $userRank > $rankRequired ) {
+     global $db_connect;
+     $top_link_home = $db_connect->dbQuery("header_vars","element = 'top_link_home'");
+     die('Sorry, you don\'t have permission to access this page. <a href="'.$top_link_home[0]['value'].'">Click here</a> to go back to the home page.<br />');
+   }
+  }
 }
 ?>

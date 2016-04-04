@@ -1,3 +1,9 @@
+<?php
+$rankRequired = 2;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+?>
+
 <div class="container-fluid">
 <h3>News</h3>
 <?php

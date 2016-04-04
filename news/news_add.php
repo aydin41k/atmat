@@ -1,4 +1,8 @@
 <?php
+$rankRequired = 5;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+
   $readNews = new echoNews;
   $readNews->dbNewsExtract('cats','all');
   $outputCats = $readNews->cats;

@@ -1,4 +1,8 @@
 <?php
+$rankRequired = 5;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+
   if( isset($_POST['id']) && $_POST['id'] == $_SESSION['id'] ||  $_SESSION['rank'] <= 1 ) {
     $postedUserInfo = array(htmlspecialchars($_POST['id']),
                       htmlspecialchars($_POST['name']),
@@ -21,5 +25,9 @@
       echo $dbCols[$i].' for user id <strong><i>'.$id.'</strong></i> was changed to '.$postedUserInfo[$i].'.<br />';
     }
   }
-  echo '<a href="?page=login/user_admin.php">Go back to User Administration page.</a><br />';
+  $adminReturn = '<a href="?page=login/user_admin.php">Go back to User Administration page.</a><br />';
+  $userReturn = '<a href="?page=mudriyyet/user_cp.php">Go back to Account Settings page.</a><br />';
+  if( $userRank === 1 ) {
+    echo $adminReturn;
+  } else { echo $userReturn; }
 ?>

@@ -1,5 +1,8 @@
-
 <?php
+$rankRequired = 1;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+
   $dieMessage = '<a href="?page=login/user_admin.php">Click to go back to user administration page</a><br />';
   if( !empty($_POST) ) {
     $username = (empty($_POST['username'])) ? die('no username specified<br />'.$dieMessage) : htmlspecialchars($_POST['username']);

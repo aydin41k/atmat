@@ -1,4 +1,8 @@
 <?php
+$rankRequired = 1;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+
   if( isset($_POST['deleteId']) ) {
     $id = htmlspecialchars($_POST['deleteId']);
     $query = "id='".$id."'";

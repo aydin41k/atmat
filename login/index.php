@@ -4,10 +4,14 @@
     Session::reload();
   }
   if( isset($_GET['loggedIn']) ) {
+    $adminCP = '';
+    if( $_SESSION['rank'] <= 4 ) {
+      $adminCP = '<a href="http://localhost/atmat/admin.php" class="top_link"><i class="fa fa-exclamation-triangle"></i> Admin Control Panel</a>';
+    }
      echo '<span class="news_title">
       <p>
        <a href="admin.php?page=mudriyyet/user_cp.php" class="top_link"><i class="fa fa-cogs"></i> User Control Panel</a><br />
-       <a href="http://localhost/atmat/admin.php" class="top_link"><i class="fa fa-exclamation-triangle"></i> Admin Control Panel</a>
+       '.$adminCP.'
       </p>
        <a href="?sessionLogout='.$_SESSION['username'].'" class="top_link"><i class="fa fa-times-circle"></i> <strong>Log out</strong></a>
      </span>';

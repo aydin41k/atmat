@@ -1,4 +1,8 @@
 <?php
+  $rankRequired = 5;
+  $userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+  Session::checkPoint($rankRequired,$userRank);
+
  $username = $_SESSION['username'];
  $query = "nickname = '".$username."'";
  $userDbInfo = $db_connect->dbQuery("users",$query);

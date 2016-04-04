@@ -1,4 +1,8 @@
 <?php
+$rankRequired = 3;
+$userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+Session::checkPoint($rankRequired,$userRank);
+
 $class_header = $class_about_atmat = $class_member_activities = $class_footer = 'tab-pane fade';
 $li_header = $li_about_atmat = $li_member_activities = $li_footer = '';
 if( isset($_GET['pg']) ) {

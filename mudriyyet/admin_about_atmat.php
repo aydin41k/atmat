@@ -1,4 +1,8 @@
 <?php
+  $rankRequired = 3;
+  $userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
+  Session::checkPoint($rankRequired,$userRank);
+
  $hv = new dbExtract('about_atmat');
  extract($hv->vars);
  $link_names = array();
