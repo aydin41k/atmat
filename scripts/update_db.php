@@ -1,7 +1,4 @@
 <?php
-
- include "db_connect.php";
- include "variables.php";
  $pg = htmlspecialchars($_GET['pg'], ENT_QUOTES);
  $hv = new dbExtract($pg);
  extract($hv->vars);
@@ -30,5 +27,5 @@
   $adminka = '../admin.php';
   header('Refresh:5;url='.$adminka.'?pg='.$pg);
   ob_end_flush();
-  echo $amend.'<br />You should be redirected in 5 seconds. If nothing happens, click to return to <a href="../admin.php?pg='.$pg.'">Admin Panel</a>.<br />';
+  echo $amend.'<br />You should be redirected in 5 seconds. If nothing happens, click to return to <a href="?pg='.$pg.'">Admin Panel</a>.<br />';
 ?>

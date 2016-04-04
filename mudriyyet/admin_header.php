@@ -11,7 +11,7 @@
    $input_names[$a] = $b;
  }
 ?>
-  <form action="scripts/update_db.php?pg=header" method="post" role="form" class="form-horizontal">
+  <form action="?page=scripts/update_db.php&pg=header" method="post" role="form" class="form-horizontal">
     <div class="form-group">
       <label class="control-label col-sm-2" for="website_title">Website title</label>
       <div class="col-sm-6">

@@ -1,7 +1,8 @@
+<?php 
 $rankRequired = 5;
 $userRank = (isset($_SESSION['rank'])) ? $_SESSION['rank'] : 9999;
 Session::checkPoint($rankRequired,$userRank);
-
+?>
 <div class="container-fluid">
 <div class="jumbobox text-center">
 <?php
@@ -79,7 +80,7 @@ if( isset($_GET['delete_confirmed']) ) {
   $query = "DELETE FROM news WHERE id='".$outputNews[$pgConf]['id']."'";
   global $connect;
   if ( $connect->query($query) === TRUE ) {
-      header('Refresh:0;url=?page=news/news_admin.php');
+      Session::reload();
   } else { echo '<h3><span class="bg-danger">Not deleted, something must have gone wrong.</h3></span><br />'; }
   $goBack = 0;
 }

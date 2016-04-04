@@ -6,7 +6,7 @@
   if( isset($_GET['loggedIn']) ) {
     $adminCP = '';
     if( $_SESSION['rank'] <= 4 ) {
-      $adminCP = '<a href="http://localhost/atmat/admin.php" class="top_link"><i class="fa fa-exclamation-triangle"></i> Admin Control Panel</a>';
+      $adminCP = '<a href="admin.php" class="top_link"><i class="fa fa-exclamation-triangle"></i> Admin Control Panel</a>';
     }
      echo '<span class="news_title">
       <p>
@@ -20,6 +20,7 @@
   if( !empty($_POST['loginUsername']) ) {
     $user = htmlspecialchars($_POST['loginUsername']);
     $passRaw = htmlspecialchars($_POST['loginPassword']);
+    unset($_POST);
     $resultArray = $db_connect->dbQuery("users","nickname = '".$user."'");
     if( $resultArray == NULL ) {
         echo '<script language="javascript">alert("Such user does not exist.")</script>';

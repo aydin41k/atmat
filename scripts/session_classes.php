@@ -14,7 +14,10 @@ class Session {
     session_destroy();
     }
   public static function reload() {
-    echo '<script language="javascript">location.reload();</script>';
+    echo "<script language=\"javascript\">
+    var pathname = window.location.pathname.split('?');
+    location = pathname[0];
+    </script>";
   }
   public static function checkPoint($rankRequired,$userRank) {
    if( $userRank > $rankRequired ) {

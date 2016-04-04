@@ -7,7 +7,7 @@ Session::checkPoint($rankRequired,$userRank);
  extract($hv->vars);
 
 
- echo '<form action="scripts/update_db.php?pg=footer" method="post">
+ echo '<form action="?page=scripts/update_db.php&pg=footer" method="post">
     <table id="admin_page_edit_container">';
 
  $input_names = array();

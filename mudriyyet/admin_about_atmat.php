@@ -10,7 +10,7 @@
    $link_names[$a] = $b;
  }
 ?>
-  <form entype="multipart/form-data" action="scripts/update_db.php?pg=about_atmat" method="post" role="form" class="form-horizontal">
+  <form entype="multipart/form-data" action="?page=scripts/update_db.php&pg=about_atmat" method="post" role="form" class="form-horizontal">
     <div class="form-group">
       <label class="control-label col-sm-2" for="website_description">Website description</label>
       <div class="col-sm-6">
