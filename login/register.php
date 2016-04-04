@@ -1,6 +1,4 @@
-<?php
-include "PDO_db_connect.php";
-?>
+
 <?php
   $dieMessage = '<a href="?page=login/user_admin.php">Click to go back to user administration page</a><br />';
   if( !empty($_POST) ) {

@@ -1,7 +1,5 @@
 <?php
-  include "PDO_db_connect.php";
-
-  if( isset($_POST['id']) ) {
+  if( isset($_POST['id']) && $_POST['id'] == $_SESSION['id'] ||  $_SESSION['rank'] <= 1 ) {
     $postedUserInfo = array(htmlspecialchars($_POST['id']),
                       htmlspecialchars($_POST['name']),
                       htmlspecialchars($_POST['username']),
@@ -9,12 +7,12 @@
                       );
   }
   else {
-    die('Invalid user specified.<br /><a href="?page=login/user_admin.php">Click to go back to User Administration page</a><br />');
+    die('Invalid user specified or you are not authorised to perform this action.<br /><a href="?page=login/user_admin.php">Click to go back to User Administration page</a><br />');
   }
   $dbCols = array('id', 'name', 'nickname', 'rank');
   $id = $_POST['id'];
   $query = "id='".$id."'";
-  $dbUserInfo = $db_connect->query("users",$query);
+  $dbUserInfo = $db_connect->dbQuery("users",$query);
 
   for($i=1; isset($postedUserInfo[$i]); $i++  ) {
     if( $postedUserInfo[$i] != $dbUserInfo[0][$i] ) {

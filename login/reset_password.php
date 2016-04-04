@@ -1,7 +1,12 @@
 <?php
-  include "PDO_db_connect.php";
-  $dbUserInfo = $db_connect->query("users");
-  $id = htmlspecialchars($_GET['id']);
+  $dbUserInfo = $db_connect->dbQuery("users");
+  if( isset($_GET['self']) && isset($_SESSION['username']) ) {
+    $username = $_SESSION['username'];
+    $query = "nickname = '".$username."'";
+    $userDbInfo = $db_connect->dbQuery("users",$query);
+    $id = $userDbInfo[0]['id'];
+  }
+  else { $id = htmlspecialchars($_GET['id']); }
   if( isset($_GET['password']) ) {
     $password = htmlspecialchars($_POST['password']);
     $password2 = htmlspecialchars($_POST['password2']);

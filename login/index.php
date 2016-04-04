@@ -1,32 +1,45 @@
 <?php
-include "PDO_db_connect.php";
-?>
-<?php
-  $dieMessage = '<a href="'.$_SERVER['PHP_SELF'].'">Click to go back</a><br />';
-  if( !empty($_POST) ) {
-    $user = (empty($_POST['username'])) ? die('no username specified<br />'.$dieMessage) : htmlspecialchars($_POST['username']);
-    $passRaw = (empty($_POST['password'])) ? die('no password specified<br />'.$dieMessage) : htmlspecialchars($_POST['password']);
-    $resultArray = $db_connect->query("users","nickname = '".$user."'");
-     if( empty($resultArray) ) { die('No such user.<br />'.$dieMessage); } 
-    $pass = md5($passRaw.$resultArray[0]['salt']);
-    echo ($pass == $resultArray[0]['password']) ? 'Password correct for user '.$user.'<br />' : 'Invalid username/password combination. <br />';
-    die($dieMessage);
+  if( isset($_GET['sessionLogout']) && isset($_SESSION['username']) && $_GET['sessionLogout'] == $_SESSION['username'] ) {
+    Session::endSession();
+    Session::reload();
+  }
+  if( isset($_GET['loggedIn']) ) {
+     echo '<span class="news_title">
+      <p>
+       <a href="admin.php?page=mudriyyet/user_cp.php" class="top_link"><i class="fa fa-cogs"></i> User Control Panel</a><br />
+       <a href="http://localhost/atmat/admin.php" class="top_link"><i class="fa fa-exclamation-triangle"></i> Admin Control Panel</a>
+      </p>
+       <a href="?sessionLogout='.$_SESSION['username'].'" class="top_link"><i class="fa fa-times-circle"></i> <strong>Log out</strong></a>
+     </span>';
+     return;
+  }
+  if( !empty($_POST['loginUsername']) ) {
+    $user = htmlspecialchars($_POST['loginUsername']);
+    $passRaw = htmlspecialchars($_POST['loginPassword']);
+    $resultArray = $db_connect->dbQuery("users","nickname = '".$user."'");
+    if( $resultArray == NULL ) {
+        echo '<script language="javascript">alert("Such user does not exist.")</script>';
+        }
+    elseif( $resultArray[0]['password'] != md5($passRaw.$resultArray[0]['salt']) ) {
+        echo '<script language="javascript">alert("Invalid username-password combination.")</script>';
+    }
+    else {
+      $sessionHandler = new Session;
+      $sessionHandler->startSession($resultArray[0]['nickname']);
+      Session::reload();
+    }
   }
 ?>
-		<div class="container">
-		 <div class="col-xs-7 col-sm-6 col-md-5 col-lg-4">
+		<div class="container-fluid">
 				<form method="post" role="form">
 						<div class="form-group">
 						  <label for="username">User name</label>
-						  <input class="form-control" id="username" name="username" placeholder="Enter username"/>
+						  <input class="form-control" id="loginUsername" name="loginUsername" placeholder="Username" required />
 						</div>
 						<div class="form-group">
 							 <label for="password">Password</label>
-						  <input class="form-control" id="password" name="password" type="password" placeholder="Enter password"/>
+						  <input class="form-control" id="loginPassword" name="loginPassword" type="password" placeholder="Password" required />
 						</div>
-						<input type="submit" value="Log in" class="form-control"/>
+						<input type="submit" value="Log in" class="form-control" onClick="validate();" />
 		 	 </form>
-		 	</div> 
-		</div>
-</body>
-</html>
+		 	</div>

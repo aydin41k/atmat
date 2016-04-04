@@ -1,8 +1,8 @@
 <?php
-  include "PDO_db_connect.php";
+
   $dieMessage = '<a href="'.$_SERVER['PHP_SELF'].'">Click to go back to user registration page</a><br />';
 
-  if( !isset($_GET['edit']) ) {
+  if( !isset($_GET['edit']) && !isset($_GET['delete']) ) {
 	echo '	<div class="container-fluid">
 	 <table class="table table-striped table-bordered table-hover">
 	  <thead>
@@ -15,7 +15,7 @@
 	    <th width="80px">&nbsp;</th>
 	   </tr>
 	  </thead>';
-	$resultArray = $db_connect->query("users");
+	$resultArray = $db_connect->dbQuery("users");
 	for( $i=0; isset($resultArray[$i]); $i++ ){
 	  echo '<tbody>
 	   <tr>
@@ -24,7 +24,7 @@
 	    <td>'.$resultArray[$i]['name'].'</td>
 	    <td>'.$resultArray[$i]['rank'].'</td>
 	    <td><a href="?page=login/user_admin.php&edit='.$resultArray[$i]['id'].'"><button type="button" class="btn btn-warning">Edit</button></td>
-	    <td><a href="?page=login/delete.php"><button type="button" class="btn btn-danger">Delete</button></td>
+	    <td><a href="?page=login/user_admin.php&delete='.$resultArray[$i]['id'].'"><button type="button" class="btn btn-danger">Delete</button></td>
 	   </tr>';
 	 }
 	echo '	  </tbody>
@@ -36,8 +36,8 @@
 if( isset($_GET['edit']) ) {
   $id = htmlspecialchars($_GET['edit']);
   $query = "id='".$id."'";
-  $result = $db_connect->query("users","$query");
-  $rank = $db_connect->query("user_ranks");
+  $result = $db_connect->dbQuery("users",$query);
+  $rank = $db_connect->dbQuery("user_ranks");
   echo '
   <h3> Editing user <strong>'.$result[0]['name'].'</strong> (<i>id = <strong>'.$result[0]['id'].'</strong></i>)</h3>
   <form class="form-horizontal" method="post" role="form" action="?page=login/edit_user.php">
@@ -54,7 +54,7 @@ if( isset($_GET['edit']) ) {
        <label class="control-label col-sm-2" for="rank">Access level</label>
        <div class="col-sm-10"><select class="form-control" id="rank" name="rank">';
          for( $i=0; isset($rank[$i]['rank']); $i++) {
-           $selected = ($rank[$i]['rank'] == $result[0]['rank']) ? 'selected' : '';
+           $selected = ($rank[$i]['rank'] == $result[0]['rank']) ? ' selected' : '';
            echo '<option value="'.$rank[$i]['rank'].'"'.$selected.'>'.$rank[$i]['title'].'</option>';
          }
   echo     '</select></div>
@@ -67,6 +67,23 @@ if( isset($_GET['edit']) ) {
        </div>
      </div>
   </form>
+  ';
+}
+
+if( isset($_GET['delete']) ) {
+  $id = htmlspecialchars($_GET['delete']);
+  $query = "id='".$id."'";
+  $result = $db_connect->dbQuery("users",$query);
+  echo '
+    <div class="text-center">
+    <span class="text-warning bg-warning"><h3>Are you sure you want to delete user <strong>'.$result[0]['name'].'</strong>?</h3></span>
+    <p>
+      <form action="admin.php?page=login/delete.php" method="post">
+        <input type="hidden" name="deleteId" value="'.$result[0]['id'].'">
+        <input type="submit" class="btn btn-danger" value="Yes, delete it straight away">
+      </form>
+    </p>
+    <p><a href="?page=login/user_admin.php"><button type="button" class="btn btn-success">No, it was a mistake, take me back.</button></a></p>
   ';
 }
 ?>

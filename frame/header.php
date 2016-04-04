@@ -27,14 +27,13 @@
                 <span class="glyphicon glyphicon-chevron-down"></span>
               </button>
               <?php
-                echo '<img src="' . $website_logo . '" id="logo" class="img-responsive" />';
+                echo '<a href="'.$top_link_home.'"><img src="' . $website_logo . '" id="logo" class="img-responsive" /></a>';
               ?>
              </div>
             <div class="collapse navbar-collapse" id="myNavbar">
            <ul class="nav navbar-nav navbar-right">
             <?php
-             $top_links = array("Home" => $top_link_home,
-                          "About ATMAT" => $top_link_about,
+             $top_links = array("About ATMAT" => $top_link_about,
                           "Latest News" => $top_link_news,
                           "Activities" => $top_link_activities,
                           "Contact us" => $top_link_contact);
@@ -42,6 +41,32 @@
               echo '<li class="topLinks"><a href="' . $link . '" class="top_link">' . $x . '</a></li>';
              }
             ?>
+            <li class="dropdown topLinks">
+              <a class="dropdown-toggle top_link" data-toggle="dropdown" href="#">
+                <?php
+                session_start();
+                  if( isset($_SESSION['username']) ) {
+                    $query = 'nickname = \''.$_SESSION['username'].'\'';
+                    $sessionUser = $db_connect->dbQuery("users",$query);
+                    echo 'Hi, '.strtok($sessionUser[0]['name'], " ").'! <span class="caret"></span>';
+                  }
+                  else {
+                    echo 'Log in <span class="caret"></span>';
+                  }
+                ?>
+              </a>
+              <div class="dropdown-menu login">
+                <?php
+                  if( isset($_SESSION['username']) ) {
+                     $_GET['loggedIn'] = TRUE;
+                     include "login/index.php";
+                  }
+                  else {
+                     include "login/index.php";
+                  }
+                ?>
+             </div>
+            </li>
            </ul>
             </div>
     </div>

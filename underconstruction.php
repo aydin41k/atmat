@@ -1,6 +1,11 @@
-<?php include "scripts/db_connect.php" ?>
-<?php include "scripts/variables.php" ?>
-<?php include "frame/header.php" ?>
+<?php 
+include "scripts/db_classes.php";
+include "scripts/db_connect.php";
+include "scripts/variables.php";
+include "scripts/session_classes.php";
+
+include "frame/header.php" 
+?>
  <div id="mid_bar">
   <div class="jumbotron text-center">
       <p>This page is being constructed as you are reading this line. Please, check back later.</p>

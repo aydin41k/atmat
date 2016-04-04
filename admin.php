@@ -1,6 +1,8 @@
 <?php
-  require "scripts/db_connect.php";
-  require "scripts/variables.php";
+include "scripts/db_classes.php";
+include "scripts/db_connect.php";
+include "scripts/variables.php";
+include "scripts/session_classes.php";
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +23,18 @@
 
  <body>
  <?php include "frame/header.php";  ?>
- <span class="text-center"><h1>Welcome to the Admin Panel of ATMAT website!</h1></span>
+ <span class="text-center"><h1>Welcome to the Control Panel!</h1></span>
  <div class="container-fluid frame">
    <div class="row">
      <div class="col-sm-3">
+       <div class="panel panel-default">
+         <div class="panel-heading">
+            <strong><h4>My Account</h4></strong>
+         </div>
+         <div class="panel-body">
+           <p><a href="?page=mudriyyet/user_cp.php">Settings</a></p>
+         </div>
+       </div>
        <div class="panel panel-default">
          <div class="panel-heading">
            <strong><h4>General Admin</h4></strong>
