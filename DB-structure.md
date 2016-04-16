@@ -13,7 +13,7 @@ element, value -- VARCHAR(50)
 element, value -- VARCHAR(50)
 
 #news
-id -- INT(6) 
+id -- INT(6) \n
 news_title news_author, news_pic -- VARCHAR(30 to 50) 
 news_date -- DATE
 news_body -- VARCHAR(max)
