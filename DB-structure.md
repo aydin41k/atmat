@@ -1,26 +1,36 @@
 DB structure for someone involved during later stages:
 
 #header_vars
-element, value -- both CHAR(50)
+element, value -- VARCHAR(50)
 
 #about_atmat_vars
-element, value -- both CHAR(50)
+element, value -- VARCHAR(50)
 
 #member_activities_vars
-element, value -- both CHAR(50)
+element, value -- VARCHAR(50)
 
 #footer_vars
-element, value -- both CHAR(50)
+element, value -- VARCHAR(50)
 
 #news
-id, news_title, news_author, news_date, news_body, news_pic, cat
+id -- INT(6) 
+news_title news_author, news_pic -- VARCHAR(30 to 50) 
+news_date -- DATE
+news_body -- VARCHAR(max)
+cat -- INT(3)
 
 #cats
-Cols:id, cat_name
+id -- INT(6) 
+cat_name -- VARCHAR(20 or 30)
 
 #users
-id, nickname, name, rank, password, salt
+id -- INT(6)
+nickname, name -- VARCHAR(30 to 50) 
+rank --- INT(3)
+password -- VARCHAR(32)
+salt -- INT(5)
 
 #user_ranks
-id, rank, title
-
+id -- INT(6)
+rank -- INT(3)
+title -- VARCHAR(20)
