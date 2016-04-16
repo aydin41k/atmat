@@ -3,7 +3,11 @@ Leave it as you found it :)
 TO DO:
 - Fix open/close sessions on the server
 - Fix the Members and Footer admin pages design
-- Add links to the frontpage links + corresponding pages
-- Make a carousel for Member's activities boxes to add more than 3 + link them to whatever pages
+- Add links to the About ATMAT links + corresponding pages
+- Add links to the Members' Activities links
 - Make About, Activities and Contact pages and fix the top links
 - Add news before launch
+
+FUTURE VERSIONS:
+- Make a carousel for Member's activities boxes to scroll for more than 3 boxes
+- Make a section under About ATMAT and above Members' Activities to display 3 latest news
