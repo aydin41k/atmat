@@ -1,11 +1,12 @@
-Leave it as you found it :)
+Leave it as you found it ![smile](http://simpleicon.com/wp-content/uploads/smile.png)
 
 TO DO:
 - Fix open/close sessions on the server
 - Fix the Members and Footer admin pages design
 - Add links to the About ATMAT links + corresponding pages
 - Add links to the Members' Activities links
-- Make About, Activities and Contact pages and fix the top links
+- Make About and Contact pages and fix the top links
+- Change `Activities` top link to `Events` and link it to the Events category on News page
 - Add news before launch
 
 FUTURE VERSIONS:
