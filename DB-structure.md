@@ -1,14 +1,14 @@
 # DB structure for someone involved during later stages:
-#
+
 #Table: header_vars
-#Cols: element, value -- both CHAR(50)
-#
+Cols: element, value -- both CHAR(50)
+
 #Table: about_atmat_vars
-#Cols: element, value -- both CHAR(50)
-#
+Cols: element, value -- both CHAR(50)
+
 #Table: member_activities_vars
-#Cols: element, value -- both CHAR(50)
-#
+Cols: element, value -- both CHAR(50)
+
 #Table: footer_vars
 #Cols: element, value -- both CHAR(50)
 #
