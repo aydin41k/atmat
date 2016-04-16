@@ -1,4 +1,4 @@
-Leave it as you found it ![smile](http://simpleicon.com/wp-content/uploads/smile.png)
+Leave it as you found it ![smile](http://dental1.org/forum/i/expressions/face-icon-small-smile.gif)
 
 TO DO:
 - Fix open/close sessions on the server
