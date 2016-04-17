@@ -1,4 +1,4 @@
-Leave it as you found it ![:)](https://cdn3.iconfinder.com/data/icons/webdesigncreative/free_icons_32x32_png/Small-smile.png)
+Leave it as you found it ![:)](http://atmat.org.au/v3/upload/smile-onion.png)
 
 TO DO:
 - Fix open/close sessions on the server
