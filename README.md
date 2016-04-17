@@ -1,7 +1,6 @@
 Leave it as you found it ![:)](http://atmat.org.au/v3/upload/smile-onion.png)
 
 TO DO:
-- Fix open/close sessions on the server
 - Fix the Members and Footer admin pages design
 - Add links to the About ATMAT links + corresponding pages
 - Add links to the Members' Activities links
