@@ -3,7 +3,8 @@ class Session {
   public function startSession($username) {
     global $db_connect;
     $user = $db_connect->dbQuery("users","nickname = '$username'");
-    $_SESSION['username'] = $username;
+    $_SESSION['name'] = $user[0]['name'];
+    $_SESSION['username'] = $user[0]['nickname'];
     $_SESSION['id'] = $user[0]['id'];
     $_SESSION['rank'] = $user[0]['rank'];
   }

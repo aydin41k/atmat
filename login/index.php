@@ -45,6 +45,6 @@
 							 <label for="password">Password</label>
 						  <input class="form-control" id="loginPassword" name="loginPassword" type="password" placeholder="Password" required />
 						</div>
-						<input type="submit" value="Log in" class="form-control" onClick="validate();" />
+						<input type="submit" value="Log in" class="form-control" />
 		 	 </form>
 		 	</div>

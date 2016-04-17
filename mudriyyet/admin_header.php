@@ -34,13 +34,13 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="news">News page</label>
+      <label class="control-label col-sm-2" for="news">News</label>
       <div class="col-sm-6">
         <input type="text" class="form-control" id="news" name="top_link_news" value="<?php echo $input_names['top_link_news'] ?>" />
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="activities">Members Activities</label>
+      <label class="control-label col-sm-2" for="activities">Events</label>
       <div class="col-sm-6">
         <input type="text" class="form-control" id="activities" name="top_link_activities" value="<?php echo $input_names['top_link_activities'] ?>" />
       </div>

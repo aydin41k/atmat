@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "scripts/db_classes.php";
 include "scripts/db_connect.php";
 include "scripts/variables.php";
@@ -19,4 +19,5 @@ include "frame/header.php"
    <div class="teker"><i class="fa fa-cog fa-spin fa-5x text-warning"></i></div>
    <div class="teker"><i class="fa fa-cog fa-spin fa-5x text-success"></i></div>
    </div>
+<?php include "../rps/index.php" ?>
 <?php include "frame/footer.php" ?>

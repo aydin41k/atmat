@@ -1,4 +1,5 @@
 <?php
+ session_start();
  $hv = new dbExtract('header');
  extract($hv->vars);
 ?>
@@ -34,8 +35,8 @@
            <ul class="nav navbar-nav navbar-right">
             <?php
              $top_links = array("About ATMAT" => $top_link_about,
-                          "Latest News" => $top_link_news,
-                          "Activities" => $top_link_activities,
+                          "News" => $top_link_news,
+                          "Events" => $top_link_activities,
                           "Contact us" => $top_link_contact);
              foreach( $top_links as $x=>$link ) {
               echo '<li class="topLinks"><a href="' . $link . '" class="top_link">' . $x . '</a></li>';
@@ -44,11 +45,8 @@
             <li class="dropdown topLinks">
               <a class="dropdown-toggle top_link" data-toggle="dropdown" href="#">
                 <?php
-                session_start();
                   if( isset($_SESSION['username']) ) {
-                    $query = 'nickname = \''.$_SESSION['username'].'\'';
-                    $sessionUser = $db_connect->dbQuery("users",$query);
-                    echo 'Hi, '.strtok($sessionUser[0]['name'], " ").'! <span class="caret"></span>';
+                    echo 'Hi, '.strtok($_SESSION['name'], " ").'! <span class="caret"></span>';
                   }
                   else {
                     echo 'Log in <span class="caret"></span>';

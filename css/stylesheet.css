@@ -58,7 +58,7 @@
 }
 #logo:hover {
     opacity: 0.8;
-    filter: alpha(opacity=80); /* For IE8 and earlier */
+    filter: alpha(opacity=80);
 }
 .ul {
  position:relative;
@@ -165,6 +165,32 @@ span.small_heading {
  margin:auto;
  align:center;
 }
+.about_pic {
+ max-width:300px;
+ margin-left:auto;
+ margin-right:auto;
+}
+img.pic_right {
+  float:right;
+}
+img.pic_left {
+ float:left;
+}
+#about-page-logo {
+ width:768px;
+ margin:auto;
+ border:none;
+ box-shadow:0px 0px 10px black;
+ align:center;
+ border-radius:10px;
+}
+.bg-dark {
+  background-color:#f2f2f2;
+}
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
 /* MEMBERS' PROJECTS */
 .other_heading {
  font-size:18pt;
@@ -242,9 +268,9 @@ div.admin_page {
 #news_page_header {
  max-width:768px;
  margin:0 auto 10px;
- border:1px solid #000;
- color:#333537;
- background-color:#fff;
+ border:0px solid #000;
+ color:#fff;
+ background-color:#4f5355;
  border-radius:25px;
 }
 #general_frame {
