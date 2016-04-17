@@ -8,6 +8,8 @@ TO DO:
 - Make About and Contact pages and fix the top links
 - Change `Activities` top link to `Events` and link it to the Events category on News page
 - News writing should enforce user's name as the author - news editing can change this (with a dropdown - select the person who has a right to write news)
+- Textareas do not return line breaks
+- Fix Youtube links - add a local bbcode for it like [youtube]
 - Add news before launch
 
 FUTURE VERSIONS:
