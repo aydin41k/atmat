@@ -1,32 +1,25 @@
 DB structure for someone involved during later stages:
 
-####header_vars
-- element, value -- VARCHAR(50) 
-
-####about_atmat_vars
-- element, value -- VARCHAR(50)
-
-####member_activities_vars
-- element, value -- VARCHAR(50)
-
-####footer_vars
-- element, value -- VARCHAR(50)
+####header_vars, about_atmat_vars, member_activities_vars, footer_vars
+- element -- VARCHAR(20) 
+- value -- VARCHAR(1000)
 
 ####news
-- id -- INT(6) \n
-- news_title news_author, news_pic -- VARCHAR(30 to 50) 
+- id -- INT(6)
+- news_title news_author, news_pic -- VARCHAR(100) 
 - news_date -- DATE
-- news_body -- VARCHAR(max)
-- cat -- INT(3)
+- news_text -- VARCHAR(8000)
+- cat -- VARCHAR(50)
 
 ####cats
-- id -- INT(6) 
-- cat_name -- VARCHAR(20 or 30)
+- id -- INT(4) 
+- cat_name -- VARCHAR(50)
 
 ####users
 - id -- INT(6)
-- nickname, name -- VARCHAR(30 to 50) 
-- rank --- INT(3)
+- nickname -- VARCHAR(12)
+- name -- VARCHAR(50) 
+- rank --- INT(2)
 - password -- VARCHAR(32)
 - salt -- INT(5)
 
