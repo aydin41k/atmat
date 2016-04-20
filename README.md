@@ -2,8 +2,8 @@ Leave it as you found it ![:)](http://atmat.org.au/v3/upload/smile-onion.png)
 
 TO DO:
 - *[DONE]* Fix opening/closing sessions
-- Fix the Members and Footer admin pages design
-- Add links to the About ATMAT links + corresponding pages
+- *[DONE]* Fix the Members page design
+- *[DONE]* Add links to the About ATMAT links + corresponding pages
 - *[DONE]* Add links to the Members' Activities links
 - *[DONE]* Make About page and fix the top link
 - Make Contact page and fix the top link
@@ -14,5 +14,6 @@ TO DO:
 - Add news before launch
 
 FUTURE VERSIONS:
+- Fix the Footer admin page design
 - Make a carousel for Member's activities boxes to scroll for more than 3 boxes
 - Make a section under About ATMAT and above Members' Activities to display 3 latest news
