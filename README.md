@@ -9,7 +9,7 @@ TO DO:
 - *[DONE]* Make Contact page and fix the top link
 - *[DONE]* Change `Activities` top link to `Events` and link it to the Events category on News page
 - Textareas do not return line breaks
-- Fix Youtube links - add a local bbcode for it like [youtube]
+- *[DONE]* Fix Youtube links - add a local bbcode for it like [youtube]
 - Add news before launch
 
 FUTURE VERSIONS:
