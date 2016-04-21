@@ -6,7 +6,7 @@ include "scripts/session_classes.php";
 include "frame/header.php";
 ?>
    <div id="mid_bar">
-     <img src="http://atmat.org.au/v3/images/template/mid_pic.jpg" id="about-page-logo" class="img-responsive" />
+     <img src="http://atmat.org.au/images/template/mid_pic.jpg" id="about-page-logo" class="img-responsive" />
    </div>
    <div id="general_frame">
       <div class="news_holder">
