@@ -143,6 +143,7 @@ div.small_box {
  text-align:center;
  border-radius:25px;
  vertical-align:top;
+ cursor:pointer;
 }
 div.small_box:hover {
  background-color:#f1f1f1;

@@ -25,7 +25,7 @@
          $var_heading = ${'sm_box' . $i . '_heading'};
          $var_img = ${'sm_box' . $i . '_img'};
          $var_text = ${'sm_box' . $i . '_text'};
-         echo '<div class="small_box col-xs-12 col-sm-4"><br />
+         echo '<div class="small_box col-xs-12 col-sm-4" onClick=window.location.assign("redirect.php?link='.$i.'")><br />
             <img src="' . $var_img . '" class="sm_box_img" />
             <p> <span class="small_heading">' . $var_heading . '</span></p>
             <p> <span class="small_text">' . $var_text . '</span> </p>

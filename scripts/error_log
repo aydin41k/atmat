@@ -1,0 +1,5 @@
+[04-Apr-2016 06:50:29 UTC] PHP Fatal error:  Class 'DB' not found in /home/muradikmatritsa1/public_html/atmat.org.au/v3/scripts/db_connect.php on line 13
+[04-Apr-2016 06:51:19 UTC] PHP Fatal error:  Class 'DB' not found in /home/muradikmatritsa1/public_html/atmat.org.au/v3/scripts/db_connect.php on line 13
+[04-Apr-2016 06:52:44 UTC] PHP Fatal error:  Class 'DB' not found in /home/muradikmatritsa1/public_html/atmat.org.au/v3/scripts/db_connect.php on line 13
+[04-Apr-2016 06:53:34 UTC] PHP Fatal error:  Class 'DB' not found in /home/muradikmatritsa1/public_html/atmat.org.au/v3/scripts/db_connect.php on line 13
+[19-Apr-2016 07:48:08 UTC] PHP Fatal error:  Class 'Session' not found in /home/muradikmatritsa1/public_html/atmat.org.au/v3/scripts/edit_link_boxes.php on line 4

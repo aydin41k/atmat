@@ -35,9 +35,8 @@ class DB {
  public function update($tableName,$colName,$value,$condition) {
    $params = '';
    if( count($colName) != count($value) || empty($colName) ) {
-     die('Number of columns does not match the number of inserted values or no parameters were supplied.'); 
+     die('Number of columns does not match the number of inserted values or no parameters were supplied.');
    }
-
    $sth = $this->dbh->prepare("UPDATE $tableName SET $colName = '$value' WHERE $condition");
    if( $sth->execute() ) {
      return;
@@ -49,6 +48,14 @@ class DB {
     if( $sth->execute() ) {
       return TRUE;
     } else { echo 'Row not removed. Please check your enquiry.'; }
+ }
+
+ public function matchDb($tableName,$colName,$postedValue,$condition) {
+    $dbValue = $this->dbQuery($tableName,$condition);
+    $dbValue = $dbValue[0][$colName];
+    if( $postedValue != $dbValue ) {
+      $this->update($tableName,$colName,$postedValue,$condition);
+     }
  }
 }
 ?>

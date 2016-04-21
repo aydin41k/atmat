@@ -46,7 +46,7 @@ if(  isset($_GET['new']) ) {
   $postedData = array(htmlspecialchars($_POST['news_title']), htmlspecialchars($_POST['news_pic']), htmlspecialchars($_POST['news_text']),
                       htmlspecialchars($_POST['news_author']), htmlspecialchars($_POST['news_date']), htmlspecialchars($_POST['cat']));
   for( $i=0; $i<count($postedData); $i++ ) {
-    if( empty($postedData[$i]) ) {
+    if( $postedData[$i] === NULL ) {
       echo '<h2><span class="bg-warning">Please fill in all the fields before submitting.</span></h2><br />';
       die();
     }
@@ -80,7 +80,7 @@ if( isset($_GET['delete_confirmed']) ) {
   $query = "DELETE FROM news WHERE id='".$outputNews[$pgConf]['id']."'";
   global $connect;
   if ( $connect->query($query) === TRUE ) {
-      Session::reload();
+      echo '<script language="javascript">window.location.assign("?page=news/news_admin.php");</script>';
   } else { echo '<h3><span class="bg-danger">Not deleted, something must have gone wrong.</h3></span><br />'; }
   $goBack = 0;
 }
